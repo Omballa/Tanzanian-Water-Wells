@@ -26,6 +26,16 @@ I believe that this approach is good as Functional Needs Repair wells will be fl
 ## Exploratory Data Analysis (EDA)
 Here I would like to explore the dataset more so as to get an general understanding.
 
+### Class Distribution
+![Class Distribution](images/class_distribution.png)
+Here I was looking at the distribution of the target classes.
+We can see that it is a normal distribution with each class almost equally represented.
+
+
+### Well Distribution
+![Class Distribution](images/wells_location.png)
+This was to investigate if a certain part of the country had a higher probalibity of well being in one class or the other i.e If wells in a certain location are more prone to be Functional or Non functional. The image showed an even distribution again. The main reason why there are more green markers (Functional Wells) in the plot is because the non functional wells (Red markers) wer plotted first hence the green markers overlapped some red markers.
+
 
 Modeling
 Evaluation
