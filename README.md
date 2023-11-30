@@ -36,7 +36,31 @@ We can see that it is a normal distribution with each class almost equally repre
 ![Class Distribution](images/wells_location.png)
 This was to investigate if a certain part of the country had a higher probalibity of well being in one class or the other i.e If wells in a certain location are more prone to be Functional or Non functional. The image showed an even distribution again. The main reason why there are more green markers (Functional Wells) in the plot is because the non functional wells (Red markers) wer plotted first hence the green markers overlapped some red markers.
 
+### Well Basin
+![Well Basin](images/well_basin.png)
+In the dataset, each well is also marked by the basin it is found near. This can be a useful feature. I plotted the distribution of Functional wells and Non Functional Wells to the basin they are found near and see if there is a pattern. In most cases the the functional wells were more, apart from the Ruvuma / Southern Coast basin which has more non functional than fuctional wells. This might need to be investigated further.
 
-Modeling
-Evaluation
-Conclusion
+
+## Modeling
+With this data, it would be nice to create a predictive model that can evaluate the data and predict if a well is likely to be functional or not. This would enable resources to be efficiently distributed to wells that are almost non functional minimizing the time citizens spend without water. 
+
+First the data was passed to a logistic Regression Model. The model had an accuracy of 73.5%. Not bad.
+
+The second model I used is a Random Forest model. It is a much more complex model and the hope was that it could learn better and it did having an accuracy of 81.5%
+
+Trying to build on the success of the Random Forest. I fine tuned the model hyperparameters to find the best values. Although this was successful. The model had an accuracy of 82.0%. A slight increase from the default model.
+
+![Model Performance](images/model.png)
+
+## Evaluation
+Although the model accuracy is good, there is a general triend that the recall is relatively low as compared to other metrics.
+
+This can be attributed to the way we converted our model from ternary to binary. We combined all Functional wells needs repair class to Non Functional. This can suggest that some of the features for these classes are different hence the model cannot learn well.
+
+## Conclusion
+Going forward, a model that is able to classify mutiple classes should be used instead of a binary approach. This might increase accuracy as well as the recall.
+
+Also, emphasis should be kept on the features that the model found to be most useful.
+
+
+
